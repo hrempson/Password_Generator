@@ -22,14 +22,27 @@
         <textarea readonly id="password" placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
       </div>
       <div class="card-footer">
-        <button id="generate" class="btn">Generate Password</button>
+        <div id="password-options">
+          <div><label>Length </label><input id="rangeLength" type="range" min="8" max="128" /><span
+              id="lengthText"></span></div>
+          <div>
+            <label>Use lowercase? </label><input id="checkLowerCase" type="checkbox" />
+          </div>
+          <div>
+            <label>Use uppercase? </label><input id="checkUpperCase" type="checkbox" />
+          </div>
+          <div>
+            <label>Use numbers? </label><input id="checkNumbers" type="checkbox" />
+          </div>
+          <div>
+            <label>Use special? </label><input id="checkSpecial" type="checkbox" />
+          </div>
+          <button id="generate" class="btn">Generate Password</button>
+        </div>
       </div>
     </div>
   </div>
-  <script src="script.js">
-
-
-  </script>
+  <script src="script.js"></script>
 </body>
 
 </html>
