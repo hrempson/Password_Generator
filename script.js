@@ -1,12 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-
-// function generatePassword() {
-//  for passwordChoices ( )
-
-// }
-
+// storing variables globally
 var criteria_lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 var criteria_uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 var criteria_numeric = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -31,21 +26,21 @@ function usr_prompt() {
     if (!usr_length) {
         return alert("Invalid type")
     }
-    if (usr_length < 8 && usr_length > 128) {
+    if (usr_length < 8 || usr_length > 128) {
         return alert("Invalid length, must be 8-128 characters");
     }
     usr_lowercase = confirm("Should password include lowercase letters?");
     if (usr_lowercase) options++
-
+// if usr_lowercase > 0, increment options 1
     usr_uppercase = confirm("Should password include uppercase letters?");
     if (usr_uppercase) options++
-
+// if usr_uppercase > 0, increment options 1
     usr_numeric = confirm("Should password include numbers?");
     if (usr_numeric) options++
-
+// if usr_numeric > 0, increment options 1
     usr_spchar = confirm("Should password include special characters?");
     if (usr_spchar) options++
-
+// if usr_spchar > 0, increment options 1
     individual_password_length = Math.floor(usr_length / options)
     extra_password = usr_length % options
     console.log(individual_password_length, extra_password)
